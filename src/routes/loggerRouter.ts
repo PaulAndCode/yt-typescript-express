@@ -3,6 +3,15 @@ import Logger from '../logger';
 
 const router = Router();
 
+/**
+ * @swagger
+ * /logger:
+ *   get:
+ *     description: Logs different levels of messages and returns a response
+ *     responses:
+ *       200:
+ *         description: Returns a message confirming the logs
+ */
 router.get('/', (req: Request, res: Response) => {
   Logger.error('This is an error log');
   Logger.warn('This is a warn log');
@@ -10,7 +19,7 @@ router.get('/', (req: Request, res: Response) => {
   Logger.http('This is a http log');
   Logger.debug('This is a debug log');
 
-  res.send('Hello world');
+  res.send('Check your logs!');
 });
 
 export default router;
