@@ -1,13 +1,13 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import morganMiddleware from './middlewares/morganMiddleware';
 import helmet from 'helmet';
 import cors from 'cors';
 // Import routes
-import indexRouter from './routes/indexRouter';
-import loggerRouter from './routes/loggerRouter';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
+import morganMiddleware from '@middlewares/morganMiddleware';
+import indexRouter from '@routes/indexRouter';
+import loggerRouter from '@routes/loggerRouter';
 
 dotenv.config();
 

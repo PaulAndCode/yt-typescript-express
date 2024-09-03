@@ -8,7 +8,13 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "types": ["jest"]
+    "types": ["jest"],
+    "baseUrl": "./src",                                  /* Specify the base directory to resolve non-relative module names. */
+    "paths": {
+      "@middlewares/*": ["middlewares/*"], // Example path alias for middlewares
+      "@routes/*": ["routes/*"], // Example path alias for routes
+      "@libs/*": ["libs/*"] // Example path alias for libs
+    }
   },
   "include": ["src/**/*", "tests/**/*"],
   "exclude": ["node_modules"]
