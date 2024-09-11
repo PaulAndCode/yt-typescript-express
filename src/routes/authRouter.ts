@@ -13,7 +13,39 @@ const isUniqueUser = (username: string, email: string) => {
   );
 };
 
-// User registration route
+/**
+ * @swagger
+ * /auth/register:
+ *   post:
+ *     summary: Register a new user
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - username
+ *               - email
+ *               - password
+ *               - role
+ *             properties:
+ *               username:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *               role:
+ *                 type: string
+ *                 enum: [user, admin]
+ *     responses:
+ *       201:
+ *         description: User registered successfully
+ *       400:
+ *         description: Username or email already in use
+ */
 router.post('/register', async (req: Request, res: Response) => {
   const { username, email, password, role } = req.body;
 
@@ -52,7 +84,39 @@ router.post('/register', async (req: Request, res: Response) => {
   );
 });
 
-// User login route
+/**
+ * @swagger
+ * /auth/login:
+ *   post:
+ *     summary: Login and get a JWT token
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - username
+ *               - password
+ *             properties:
+ *               username:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Successfully logged in
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 token:
+ *                   type: string
+ *       400:
+ *         description: Invalid credentials
+ */
 router.post('/login', async (req: Request, res: Response) => {
   const { username, password } = req.body;
   const user = users.find((u) => u.username === username);
