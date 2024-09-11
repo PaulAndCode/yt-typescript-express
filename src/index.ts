@@ -1,6 +1,4 @@
 import express from 'express';
-import dotenv from 'dotenv';
-dotenv.config();
 import helmet from 'helmet';
 import cors from 'cors';
 // Import routes
@@ -11,9 +9,10 @@ import indexRouter from '@routes/indexRouter';
 import loggerRouter from '@routes/loggerRouter';
 import authRouter from '@routes/authRouter';
 import protectedRouter from '@routes/protectedRouter';
+import ENV from '@utils/env';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = ENV.PORT;
 
 // Add JSON middleware to parse incoming requests
 app.use(express.json());

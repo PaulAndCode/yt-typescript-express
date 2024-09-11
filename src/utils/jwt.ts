@@ -1,7 +1,8 @@
 import jwt from 'jsonwebtoken';
 import Logger from '@libs/logger';
+import ENV from '@utils/env';
 
-const SECRET_KEY = process.env.JWT_SECRET || '';
+const SECRET_KEY = ENV.JWT_SECRET;
 
 export interface UserPayload {
   userId: string;
