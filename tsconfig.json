@@ -3,31 +3,38 @@
     /* Visit https://aka.ms/tsconfig to read more about this file */
     /* Projects */
     /* Language and Environment */
-    "target": "ES6",                                     /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "target": "ES6" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
 
     /* Modules */
-    "module": "commonjs",                                /* Specify what module code is generated. */
-    "rootDir": "./src",                                  /* Specify the root folder within your source files. */
+    "module": "commonjs" /* Specify what module code is generated. */,
+    "rootDir": "./src" /* Specify the root folder within your source files. */,
+    "typeRoots": [
+      "./src/types",
+      "./node_modules/@types"
+    ] /* Specify multiple folders that act like './node_modules/@types'. */,
+
     /* JavaScript Support */
-    "baseUrl": "./src",                                  /* Specify the base directory to resolve non-relative module names. */
+    "baseUrl": "./src" /* Specify the base directory to resolve non-relative module names. */,
     "paths": {
       "@middlewares/*": ["middlewares/*"], // Example path alias for middlewares
       "@routes/*": ["routes/*"], // Example path alias for routes
-      "@libs/*": ["libs/*"] // Example path alias for libs
-    },                                                    /* Specify a set of entries that re-map imports to additional lookup locations. */
+      "@libs/*": ["libs/*"], // Example path alias for libs
+      "@models/*": ["models/*"], // Example path alias for models
+      "@utils/*": ["utils/*"] // Example path alias for utils
+    } /* Specify a set of entries that re-map imports to additional lookup locations. */,
 
     /* Emit */
-    "outDir": "./dist",                                   /* Specify an output folder for all emitted files. */
+    "outDir": "./dist" /* Specify an output folder for all emitted files. */,
 
     /* Interop Constraints */
-    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
 
     /* Type Checking */
-    "strict": true,                                      /* Enable all strict type-checking options. */
+    "strict": true /* Enable all strict type-checking options. */,
 
     /* Completeness */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
